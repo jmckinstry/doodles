@@ -1,0 +1,1 @@
+Things I've done as warm-up challenges and the like. Each directory should have a README explaining what's there.
