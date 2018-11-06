@@ -1,0 +1,3 @@
+A small doodle that gives a web interface to the Ponysay commandline program found at https://github.com/erkin/ponysay
+
+It's cute and I like it but it's not very accessible, so I did this on a whim. Could be improved in a lot of ways (hiding the message box, labeling and organizing things better, using post/base64 url encoding for sharing, nosql saves for a particular input, etc etc) but not that important.
