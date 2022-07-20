@@ -40,7 +40,7 @@ def f_create_regex(slots):
 	return res
 
 def f_create_regex_letters(slot):
-	print("Making regex for:" + str(slot))
+	#print("Making regex for:" + str(slot))
 	letters = slot["letters"]
 	not_letters = slot["not_letters"]
 
@@ -91,7 +91,7 @@ def main():
 		res_unique = {"word":None, "score":0}
 
 		r = re.compile(current_search)
-		print(current_search)
+		#print(current_search)
 
 		# Can't edit dictionaries as we use them, so 'remove' keys that cannot be valid now
 		new_dict = {}
@@ -119,6 +119,9 @@ def main():
 			break
 
 		# Found a word, tell the user and get its results
+		### SHORTCUT TO USE ONLY MOST UNIQUE WORDS ###
+		res = res_unique
+
 		if res["word"] is not res_unique["word"]:
 			print("Choose between 1) " + res_unique["word"] + " (" + str(res_unique["score"]) + ") and 2) " + res["word"] + " (" + str(res["score"]) + ")")
 			while True:
@@ -142,9 +145,9 @@ def main():
 		i = 0
 		while i < len(answer) and i < len_game_chars:
 			cur_c = res["word"][i]
-			print("Cur_c is: " + cur_c)
-			print("Slots is: ")
-			print(slots)
+			#print("Cur_c is: " + cur_c)
+			#print("Slots is: ")
+			#print(slots)
 
 			#switch(answer[1]):
 			if answer[i] == '_':

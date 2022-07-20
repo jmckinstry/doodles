@@ -1,0 +1,50 @@
+[asier@scootaloo doodles]$ python3 100_prisoners.py
+Building strategy: dumb (runs=10000)
+Building strategy: niave (runs=10000)
+Building strategy: circular (runs=10000)
+
+Strategy: dumb
+---
+Winners: 0 (0.0%)
+Lost on Prisoner 1: 6019
+Lost on Prisoner 2: 2431
+Lost on Prisoner 3: 953
+Lost on Prisoner 4: 352
+Lost on Prisoner 5: 140
+Lost on Prisoner 6: 61
+Lost on Prisoner 7: 23
+Lost on Prisoner 8: 16
+Lost on Prisoner 9: 5
+
+Strategy: niave
+---
+Winners: 0 (0.0%)
+Lost on Prisoner 1: 5049
+Lost on Prisoner 2: 2494
+Lost on Prisoner 3: 1250
+Lost on Prisoner 4: 626
+Lost on Prisoner 5: 279
+Lost on Prisoner 6: 134
+Lost on Prisoner 7: 83
+Lost on Prisoner 8: 35
+Lost on Prisoner 9: 26
+Lost on Prisoner 10: 10
+Lost on Prisoner 11: 10
+Lost on Prisoner 12: 4
+
+Strategy: circular
+---
+Winners: 3062 (30.620000000000005%)
+Lost on Prisoner 1: 5040
+Lost on Prisoner 2: 1229
+Lost on Prisoner 3: 444
+Lost on Prisoner 4: 141
+Lost on Prisoner 5: 47
+Lost on Prisoner 6: 20
+Lost on Prisoner 7: 8
+Lost on Prisoner 8: 4
+Lost on Prisoner 9: 4
+Lost on Prisoner 10: 1
+
+Done!
+

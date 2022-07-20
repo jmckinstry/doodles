@@ -1,0 +1,61 @@
+Building strategy: dumb (runs=100000)
+Building strategy: niave (runs=100000)
+Building strategy: circular (runs=100000)
+
+Strategy: dumb
+---
+Winners: 0 (0.0%)
+Lost on Prisoner 1: 60757
+Lost on Prisoner 2: 23652
+Lost on Prisoner 3: 9425
+Lost on Prisoner 4: 3701
+Lost on Prisoner 5: 1518
+Lost on Prisoner 6: 589
+Lost on Prisoner 7: 220
+Lost on Prisoner 8: 76
+Lost on Prisoner 9: 46
+Lost on Prisoner 10: 10
+Lost on Prisoner 11: 4
+Lost on Prisoner 12: 1
+Lost on Prisoner 14: 1
+
+Strategy: niave
+---
+Winners: 0 (0.0%)
+Lost on Prisoner 1: 50098
+Lost on Prisoner 2: 24882
+Lost on Prisoner 3: 12571
+Lost on Prisoner 4: 6316
+Lost on Prisoner 5: 3116
+Lost on Prisoner 6: 1550
+Lost on Prisoner 7: 731
+Lost on Prisoner 8: 356
+Lost on Prisoner 9: 174
+Lost on Prisoner 10: 92
+Lost on Prisoner 11: 58
+Lost on Prisoner 12: 26
+Lost on Prisoner 13: 16
+Lost on Prisoner 14: 6
+Lost on Prisoner 15: 4
+Lost on Prisoner 16: 2
+Lost on Prisoner 18: 1
+Lost on Prisoner 20: 1
+
+Strategy: circular
+---
+Winners: 31375 (31.374999999999996%)
+Lost on Prisoner 1: 49986
+Lost on Prisoner 2: 12213
+Lost on Prisoner 3: 3970
+Lost on Prisoner 4: 1470
+Lost on Prisoner 5: 605
+Lost on Prisoner 6: 234
+Lost on Prisoner 7: 79
+Lost on Prisoner 8: 38
+Lost on Prisoner 9: 17
+Lost on Prisoner 10: 8
+Lost on Prisoner 11: 4
+Lost on Prisoner 13: 1
+
+Done!
+
