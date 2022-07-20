@@ -16,7 +16,13 @@ import random
 _debug = False
 
 _config_prisoner_count	= 100
-_config_game_runs	= 10000
+_config_game_runs		= 100000
+
+# Helper, swap elements in an array
+def _swap_elements(list, x, y):
+	val = list[x]
+	list[x] = list[y]
+	list[y] = val
 
 def _niave_shuffle_strategy(boxes):
 	length = len(boxes)
@@ -59,10 +65,43 @@ class Prisoner:
 		# If there have been no guesses, guess our box number
 		if prisoner.last_guess is None:
 			return prisoner.id
-		# If there have been guesses and we don't know the answer, keep going
+		# If there have been guesses and we don't know the answer, follow the chain
 		elif not prisoner.known[prisoner.last_value]:
 			return prisoner.last_value
 		# No good guesses, pick something we haven't guessed before
+		return Prisoner._niave_guess_strategy(prisoner, game)
+
+	@staticmethod
+	def _future_assist_strategy(prisoner, game):
+		# Under these assumptions:
+		#  Boxes can only contain one number
+		#  Numbers in boxes are unique
+		#  No contact between Prisoners is made
+		# We can swap two numbers without breaking rules
+
+		# If there have been no guesses, guess our box number
+		if prisoner.last_guess is None:
+			return prisoner.id
+
+		# We have standing guesses, so swap the current guess and its pointed box, then choose it if we hadn't already opened it yet
+		# Swaps first
+		if prisoner.last_guess is not prisoner.last_value:
+			# Swap knowns and box values
+			#print('old:' + str(prisoner.known))
+			#print('old:' + str(game.puzzle.boxes))
+			_swap_elements(prisoner.known, prisoner.last_guess, prisoner.last_value)
+			_swap_elements(game.puzzle.boxes, prisoner.last_guess, prisoner.last_value)
+			#print('new:' + str(prisoner.known))
+			#print('new:' + str(game.puzzle.boxes))
+
+			# If we had to open a new box, we've already picked it
+			if not prisoner.known[prisoner.last_guess]:
+				return prisoner.last_guess
+
+		# No good guesses, pick something we haven't guessed before.
+		# TODO: SHORTCUT! Everything before us is sorted, so we can pick between current and the end instead of everything
+		# Need a way to pick out of remaining values, which diminish quickly towards the end of Prisoners
+		# In the meantime, Niave will work
 		return Prisoner._niave_guess_strategy(prisoner, game)
 
 	def make_guess(self, game):
@@ -145,6 +184,7 @@ if __name__ == "__main__":
 		('dumb', Prisoner._dumb_guess_strategy, []),
 		('niave', None, []),
 		('circular', Prisoner._circular_guess_strategy, []),
+		('my attempt', Prisoner._future_assist_strategy, []),
 	]
 
 	# Init win lists
